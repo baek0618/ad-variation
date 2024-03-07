@@ -23,7 +23,7 @@ function App() {
       <div className="main1">
         <div className="header">
           <img
-            src="/img/icons/adone_WH@2x.png"
+            src="./img/icons/adone_WH@2x.png"
             className="headerLogo"
             alt="logo"
           />
@@ -48,7 +48,7 @@ function App() {
           <img
             className="line"
             // style={{ marginLeft: "50px" }}
-            src="/img/icons/Line_4@2x.png"
+            src="./img/icons/Line_4@2x.png"
             alt=""
           />
         </div>
@@ -60,7 +60,7 @@ function App() {
               <div style={{ display: "flex", alignItems: "center" }}>
                 <span>Go into</span>
                 <img
-                  src="/img/icons/Arrow_6@2x.png"
+                  src="./img/icons/Arrow_6@2x.png"
                   alt=""
                   style={{ width: "16px", marginLeft: "6px" }}
                 />
@@ -111,7 +111,7 @@ function App() {
       </div>
 
       {/* divider */}
-      {/* <img className="line" src="/img/icons/Line_4@2x.png" alt="" /> */}
+      {/* <img className="line" src="./img/icons/Line_4@2x.png" alt="" /> */}
 
       {/* main2 */}
       <div className="main2">
@@ -155,10 +155,10 @@ function App() {
             optimal campaign performance at a reasonable cost & time
           </div>
         </div>
-        <img className="line" src="/img/icons/Line_4@2x.png" alt="" />
+        <img className="line" src="./img/icons/Line_4@2x.png" alt="" />
         <div id="main2_flow">
           <img
-            src="/img/main2_flow.png"
+            src="./img/main2_flow.png"
             style={{ width: "100%", objectFit: "contain" }}
             alt=""
           />
@@ -180,7 +180,7 @@ function App() {
         </div>
         <img
           className="line"
-          src="/img/icons/Line_2@2x.png"
+          src="./img/icons/Line_2@2x.png"
           style={{ marginTop: "60px", marginBottom: "78px" }}
           alt=""
         />
@@ -188,7 +188,7 @@ function App() {
           style={{ width: "100%", display: "flex", justifyContent: "center" }}
         >
           <img
-            src="/img/main2_algorithm.png"
+            src="./img/main2_algorithm.png"
             alt=""
             style={{ width: "75%", objectFit: "contain" }}
           />
@@ -217,7 +217,7 @@ function App() {
                         needed?
                       </span>
                       <img
-                        src="/img/icons/service_icon.png"
+                        src="./img/icons/service_icon.png"
                         style={{ height: "130px", marginLeft: "30px" }}
                         alt=""
                       />
@@ -236,7 +236,7 @@ function App() {
           </span>
         </div>
         <img
-          src="/img/icons/Line_1@2x.png"
+          src="./img/icons/Line_1@2x.png"
           alt=""
           style={{
             width: "100%",
@@ -249,7 +249,7 @@ function App() {
         />
 
         <img
-          src="/img/main2_needs.png"
+          src="./img/main2_needs.png"
           alt=""
           style={{ width: "100%", objectFit: "contain" }}
         />
@@ -274,7 +274,7 @@ function App() {
             )}
           </InView>
           <img
-            src="/img/icons/Line_3@2x.png"
+            src="./img/icons/Line_3@2x.png"
             alt=""
             style={{ width: "100%", objectFit: "contain" }}
           />
@@ -414,7 +414,7 @@ function App() {
                       }}
                     >
                       <img
-                        src="/img/icons/psd.png"
+                        src="./img/icons/psd.png"
                         style={{ width: "280px" }}
                         alt=""
                       />
@@ -451,7 +451,7 @@ function App() {
           </div>
           <div className="footer_text2">
             <img
-              src="/img/icons/adone_WH@2x.png"
+              src="./img/icons/adone_WH@2x.png"
               style={{ width: "120px" }}
               alt=""
             />

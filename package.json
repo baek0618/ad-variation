@@ -2,7 +2,7 @@
   "name": "ad-variation",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://baek0618.github.io/ad-variation/",
+  "homepage": "http://baek0618.github.io/ad-variation",
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
