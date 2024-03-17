@@ -21,6 +21,10 @@ function App() {
   return (
     <div className="container">
       <div className="main1">
+        <video className="mainVideoContainer" autoPlay loop muted>
+          <source src={"./img/main_video.mp4"} type="video/mp4" />
+        </video>
+
         <div className="header">
           <img
             src="./img/icons/adone_WH@2x.png"
@@ -29,7 +33,9 @@ function App() {
           />
           <div>MENU</div>
           <div>
-            <span>MY PAGE</span>
+            <Button variant="text" sx={{ color: "white" }}>
+              MY PAGE
+            </Button>
             <Button variant="text" id="langButton">
               <div
                 style={{
@@ -44,7 +50,7 @@ function App() {
             </Button>
           </div>
         </div>
-        <div style={{ paddingLeft: "50px" }}>
+        <div style={{ paddingLeft: "50px", zIndex: 2 }}>
           <img
             className="line"
             // style={{ marginLeft: "50px" }}
@@ -92,7 +98,7 @@ function App() {
                           variant="text"
                         >
                           <span>Start</span>
-                          <span>＋</span>
+                          <span style={{ fontSize: "2.8rem" }}>＋</span>
                         </Button>
                       </FadeIn>
                     )}
@@ -124,30 +130,11 @@ function App() {
           }}
         >
           <div id="main2_text2">
-            <InView>
-              {({ inView, ref, entry }) => (
-                <div ref={ref}>
-                  {inView && (
-                    <TypeAnimation
-                      sequence={[
-                        // Same substring at the start will only be typed out once, initially
-                        "What is DA* automatic variation service?",
-                        1000, // wait 1s before replacing "Mice" with "Hamsters"
-                      ]}
-                      wrapper="span"
-                      speed={70}
-                      style={{
-                        display: "inline-block",
-                        width: "800px",
-                        height: "140px",
-                      }}
-                      repeat={Infinity}
-                      cursor={false}
-                    />
-                  )}
-                </div>
-              )}
-            </InView>
+            <div>
+              What is DA* automatic
+              <br />
+              variation service?
+            </div>
           </div>
           <div id="main2_text3">
             Advertisers and small businesses can achieve
@@ -156,15 +143,112 @@ function App() {
           </div>
         </div>
         <img className="line" src="./img/icons/Line_4@2x.png" alt="" />
-        <div id="main2_flow">
-          <img
-            src="./img/main2_flow.png"
-            style={{ width: "100%", objectFit: "contain" }}
-            alt=""
-          />
-        </div>
+        <InView>
+          {({ inView, ref, entry }) => (
+            <div ref={ref}>
+              {inView ? (
+                <div id="main2_flow">
+                  <div className="main2_img_wrapper" style={{ width: "342px" }}>
+                    <FadeIn transitionDuration={600}>
+                      <img
+                        src="./img/icons/data_flow_1-1.png"
+                        style={{
+                          width: "100%",
+                          objectFit: "contain",
+                          marginBottom: "30px",
+                          height: "50px",
+                        }}
+                        alt=""
+                      />
+                    </FadeIn>
+                    <FadeIn transitionDuration={600}>
+                      <img
+                        src="./img/icons/data_flow_1-2.png"
+                        style={{ width: "100%", objectFit: "contain" }}
+                        alt=""
+                      />
+                    </FadeIn>
+                  </div>
+
+                  <div className="arrow_wrapper">
+                    <FadeIn transitionDuration={600} delay={600}>
+                      <img
+                        src="./img/icons/arrow_icon.png"
+                        alt=""
+                        style={{ width: "105px", marginRight: "41px" }}
+                      />
+                    </FadeIn>
+                  </div>
+
+                  {/* data flow 2 */}
+                  <div className="main2_img_wrapper" style={{ width: "475px" }}>
+                    <FadeIn transitionDuration={600} delay={1200}>
+                      <img
+                        src="./img/icons/data_flow_2-1.png"
+                        style={{
+                          width: "100%",
+                          objectFit: "contain",
+                          marginBottom: "30px",
+                          height: "50px",
+                        }}
+                        alt=""
+                      />
+                    </FadeIn>
+                    <FadeIn transitionDuration={600} delay={1200}>
+                      <img
+                        src="./img/icons/data_flow_2-2.png"
+                        style={{ width: "100%", objectFit: "contain" }}
+                        alt=""
+                      />
+                    </FadeIn>
+                  </div>
+
+                  <div className="arrow_wrapper">
+                    <FadeIn transitionDuration={600} delay={1800}>
+                      <img
+                        src="./img/icons/arrow_icon.png"
+                        alt=""
+                        style={{
+                          width: "105px",
+                          marginLeft: "46px",
+                          marginRight: "38px",
+                        }}
+                      />
+                    </FadeIn>
+                  </div>
+
+                  {/* data flow 3 */}
+                  <div className="main2_img_wrapper" style={{ width: "374px" }}>
+                    <FadeIn transitionDuration={600} delay={2400}>
+                      <img
+                        src="./img/icons/data_flow_3-1.png"
+                        style={{
+                          width: "100%",
+                          objectFit: "contain",
+                          marginBottom: "30px",
+                          height: "50px",
+                        }}
+                        alt=""
+                      />
+                    </FadeIn>
+                    <FadeIn transitionDuration={600} delay={2400}>
+                      <img
+                        src="./img/icons/data_flow_3-2.png"
+                        style={{ width: "318px", objectFit: "contain" }}
+                        alt=""
+                      />
+                    </FadeIn>
+                  </div>
+                </div>
+              ) : (
+                <div style={{ height: "600px" }} />
+              )}
+            </div>
+          )}
+        </InView>
+
         <div id="main2_text4">
-          <InView>
+          {/* <InView>
             {({ inView, ref, entry }) => (
               <div ref={ref}>
                 {inView && (
@@ -176,7 +260,10 @@ function App() {
                 )}
               </div>
             )}
-          </InView>
+          </InView> */}
+          Big data to train AI-generated
+          <br />
+          model-based AD variation algorithms
         </div>
         <img
           className="line"
@@ -187,11 +274,79 @@ function App() {
         <div
           style={{ width: "100%", display: "flex", justifyContent: "center" }}
         >
-          <img
+          <InView>
+            {({ inView, ref, entry }) => (
+              <div ref={ref}>
+                {inView ? (
+                  <div id="main2_flow_wrapper">
+                    <FadeIn transitionDuration={600}>
+                      <div style={{ display: "flex", flexDirection: "column" }}>
+                        <img
+                          src="./img/main_2_flow_1-1.png"
+                          alt=""
+                          style={{
+                            height: "50px",
+                            objectFit: "contain",
+                            marginBottom: "38px",
+                          }}
+                        />
+                        <img
+                          src="./img/main_2_flow_1-2.png"
+                          alt=""
+                          style={{
+                            objectFit: "contain",
+                            width: "564px",
+                          }}
+                        />
+                      </div>
+                    </FadeIn>
+                    <FadeIn transitionDuration={1000} delay={600}>
+                      <div>
+                        <img
+                          src="./img/icons/arrow_icon_blue.png"
+                          alt=""
+                          style={{
+                            width: "90px",
+                            marginLeft: "55px",
+                            marginRight: "73px",
+                          }}
+                        />
+                      </div>
+                    </FadeIn>
+                    <FadeIn transitionDuration={1000} delay={1200}>
+                      <div style={{ display: "flex", flexDirection: "column" }}>
+                        <img
+                          src="./img/main_2_flow_2-1.png"
+                          alt=""
+                          style={{
+                            height: "50px",
+                            objectFit: "contain",
+                            marginBottom: "38px",
+                          }}
+                        />
+                        <img
+                          src="./img/main_2_flow_2-2.png"
+                          alt=""
+                          style={{
+                            objectFit: "contain",
+                            width: "540px",
+                          }}
+                        />
+                      </div>
+                    </FadeIn>
+                  </div>
+                ) : (
+                  <div style={{ height: "640px" }} />
+                )}
+              </div>
+            )}
+          </InView>
+
+          {/* <img
             src="./img/main2_algorithm.png"
             alt=""
             style={{ width: "75%", objectFit: "contain" }}
-          />
+          /> */}
         </div>
       </div>
 
@@ -202,31 +357,22 @@ function App() {
           display: "flex",
           justifyContent: "center",
           marginTop: "140px",
+          flexDirection: "column",
         }}
       >
         <div id="main2_needs_text1">
-          <InView>
-            {({ inView, ref, entry }) => (
-              <div ref={ref}>
-                {inView && (
-                  <FadeIn transitionDuration={1000}>
-                    <div style={{ display: "flex" }}>
-                      <span>
-                        Why is this service
-                        <br />
-                        needed?
-                      </span>
-                      <img
-                        src="./img/icons/service_icon.png"
-                        style={{ height: "130px", marginLeft: "30px" }}
-                        alt=""
-                      />
-                    </div>
-                  </FadeIn>
-                )}
-              </div>
-            )}
-          </InView>
+          <div style={{ display: "flex" }}>
+            <span>
+              Why is this service
+              <br />
+              needed?
+            </span>
+            <img
+              src="./img/icons/service_icon.png"
+              style={{ height: "130px", marginLeft: "30px" }}
+              alt=""
+            />
+          </div>
         </div>
         <div id="main2_needs_text2">
           <span>
@@ -234,45 +380,105 @@ function App() {
             <br />
             each user's needs
           </span>
+          <img
+            src="./img/icons/Line_1@2x.png"
+            alt=""
+            style={{
+              width: "100%",
+              objectFit: "contain",
+              position: "absolute",
+              bottom: "15px",
+            }}
+          />
         </div>
-        <img
-          src="./img/icons/Line_1@2x.png"
-          alt=""
-          style={{
-            width: "100%",
-            objectFit: "contain",
-            position: "absolute",
-            // background: "red",
-            top: "280px",
-            right: "193px",
-          }}
-        />
+      </div>
 
-        <img
-          src="./img/main2_needs.png"
-          alt=""
-          style={{ width: "100%", objectFit: "contain" }}
-        />
+      <div className="clientContainer">
+        {/* client 1 */}
+        <div style={{ marginLeft: "240px" }}>
+          <div className="clientWrapper">
+            <img
+              className="clientImg"
+              src="./img/icons/client1_img.png"
+              alt=""
+            />
+            <div id="speechBubble1">
+              It's exhausting to work with variations
+              <br />
+              for different media platform sizes
+            </div>
+            <img
+              className="clientName"
+              src="./img/icons/client1_name.png"
+              alt=""
+              style={{ left: "10px" }}
+            />
+          </div>
+        </div>
+
+        {/* client 2 */}
+        <div style={{ marginRight: "240px", alignSelf: "flex-end" }}>
+          <div className="clientWrapper">
+            <div id="speechBubble2">
+              I want to have the best campaign
+              <br />
+              performance with low cost and labor
+            </div>
+            <img
+              className="clientImg"
+              src="./img/icons/client2_img.png"
+              alt=""
+              style={{ marginRight: "0px", height: "188px" }}
+            />
+            <img
+              className="clientName"
+              src="./img/icons/client2_name.png"
+              alt=""
+              style={{ right: "0px" }}
+            />
+          </div>
+        </div>
+
+        {/* client 3 */}
+        <div style={{ marginLeft: "510px" }}>
+          <div className="clientWrapper">
+            <img
+              className="clientImg"
+              src="./img/icons/client3_img.png"
+              alt=""
+            />
+            <div id="speechBubble3">
+              I have AD photoshop data,
+              <br />
+              but I can't utilize it
+            </div>
+            <img
+              className="clientName"
+              src="./img/icons/client3_name.png"
+              alt=""
+              style={{ left: "-35px" }}
+            />
+          </div>
+        </div>
+
+        <div id="client_background">
+          <span>Solutions to meet needs & solve inconveniences</span>
+          <img
+            src="./img/icons/bottom_arrow.png"
+            alt=""
+            style={{ width: "22px", objectFit: "contain", marginTop: "8px" }}
+          />
+        </div>
       </div>
 
       {/* main3  */}
       <div className="main3">
         <div className="main3_contents">
-          <InView>
-            {({ inView, ref, entry }) => (
-              <div ref={ref} style={{ minHeight: "138px" }}>
-                {inView && (
-                  <FadeIn transitionDuration={1000}>
-                    <div id="main3_text1">
-                      Solve AD on all media platforms
-                      <br />
-                      with our service
-                    </div>
-                  </FadeIn>
-                )}
-              </div>
-            )}
-          </InView>
+          <div id="main3_text1">
+            Solve AD on all media platforms
+            <br />
+            with our service
+          </div>
           <img
             src="./img/icons/Line_3@2x.png"
             alt=""
@@ -359,34 +565,50 @@ function App() {
               work time and maximize efficiency
             </div>
           </div>
+
+          <div id="aiDataImg1">
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                position: "relative",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src="./img/icons/ai_text.png"
+                alt=""
+                style={{
+                  width: "129px",
+                  objectFit: "contain",
+                  right: "300px",
+                  position: "absolute",
+                  marginBottom: "50px",
+                }}
+              />
+            </div>
+          </div>
         </div>
+
+        <div id="bg_img" />
       </div>
 
       {/* main4 */}
       <div className="main4">
         <div className="main4_text_wrapper">
-          <InView>
-            {({ inView, ref, entry }) => (
-              <div ref={ref}>
-                {inView && (
-                  <FadeIn transitionDuration={1000}>
-                    <div className="main4_text1">
-                      Choose
-                      <br />
-                      the media you
-                      <br />
-                      want to run ads on!
-                    </div>
-                    <div className="main4_text2">
-                      Automatically converts
-                      <br />
-                      numerous sizes and specific specifications
-                    </div>
-                  </FadeIn>
-                )}
-              </div>
-            )}
-          </InView>
+          <div className="main4_text1">
+            Choose
+            <br />
+            the media you
+            <br />
+            want to run ads on!
+          </div>
+          <div className="main4_text2">
+            Automatically converts
+            <br />
+            numerous sizes and specific specifications
+          </div>
         </div>
       </div>
 
