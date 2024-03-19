@@ -1,19 +1,26 @@
 {
   "files": {
-    "main.css": "/ad-variation/static/css/main.faec8b47.css",
-    "main.js": "/ad-variation/static/js/main.9e0c1100.js",
+    "main.css": "/ad-variation/static/css/main.0c9a40aa.css",
+    "main.js": "/ad-variation/static/js/main.258f4712.js",
     "static/js/787.8c656f29.chunk.js": "/ad-variation/static/js/787.8c656f29.chunk.js",
-    "static/media/main4_bg.png": "/ad-variation/static/media/main4_bg.ee975cf12d343eaeeb9e.png",
-    "static/media/main3_ai_bg.png": "/ad-variation/static/media/main3_ai_bg.9ffe73736841cc9f60ba.png",
+    "static/media/GmarketSansTTFBold.ttf": "/ad-variation/static/media/GmarketSansTTFBold.69428064ef8eee25be33.ttf",
+    "static/media/GmarketSansTTFMedium.ttf": "/ad-variation/static/media/GmarketSansTTFMedium.d4bac6b182bed73c9375.ttf",
+    "static/media/GmarketSansTTFLight.ttf": "/ad-variation/static/media/GmarketSansTTFLight.efaa8f19ead1555b1c39.ttf",
+    "static/media/platform_bg_img.png": "/ad-variation/static/media/platform_bg_img.f41c851d27fc26160262.png",
+    "static/media/main3_ai_bg.png": "/ad-variation/static/media/main3_ai_bg.9c30845476e4f61bcb39.png",
+    "static/media/main2_needs.png": "/ad-variation/static/media/main2_needs.bc0c7c4a3f18ba6b5c63.png",
     "static/media/main5_bg.png": "/ad-variation/static/media/main5_bg.237f7422f901b1edbfff.png",
     "static/media/Montserrat-Medium.ttf": "/ad-variation/static/media/Montserrat-Medium.b8c6753baa964ccac1ba.ttf",
+    "static/media/client2_speech_bubble.png": "/ad-variation/static/media/client2_speech_bubble.472a7adc962220281b47.png",
+    "static/media/client1_speech_bubble.png": "/ad-variation/static/media/client1_speech_bubble.102238286d873c93bff1.png",
+    "static/media/client3_speech_bubble.png": "/ad-variation/static/media/client3_speech_bubble.07fe068934180d1fed39.png",
     "index.html": "/ad-variation/index.html",
-    "main.faec8b47.css.map": "/ad-variation/static/css/main.faec8b47.css.map",
-    "main.9e0c1100.js.map": "/ad-variation/static/js/main.9e0c1100.js.map",
+    "main.0c9a40aa.css.map": "/ad-variation/static/css/main.0c9a40aa.css.map",
+    "main.258f4712.js.map": "/ad-variation/static/js/main.258f4712.js.map",
     "787.8c656f29.chunk.js.map": "/ad-variation/static/js/787.8c656f29.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.faec8b47.css",
-    "static/js/main.9e0c1100.js"
+    "static/css/main.0c9a40aa.css",
+    "static/js/main.258f4712.js"
   ]
 }
