@@ -2,6 +2,18 @@
   font-family: "montserrat";
   src: url("../public/font/Montserrat/Montserrat-Medium.ttf");
 }
+@font-face {
+  font-family: "gmarketSansBold";
+  src: url("../public/font/GmarketSans/GmarketSansTTFBold.ttf");
+}
+@font-face {
+  font-family: "gmarketSansMedium";
+  src: url("../public/font/GmarketSans/GmarketSansTTFMedium.ttf");
+}
+@font-face {
+  font-family: "gmarketSansLight";
+  src: url("../public/font/GmarketSans/GmarketSansTTFLight.ttf");
+}
 
 /* // 뷰포트의 가로너비가 1025px 이상인 경우 적용 : 데스크탑 환경 */
 @media (max-width: 1200px) {
@@ -25,8 +37,9 @@
   display: flex;
   height: 100%;
   flex-direction: column;
-  font-family: montserrat;
+  font-family: gmarketSansBold;
   min-width: 1400px;
+  align-items: center;
 }
 /* ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
@@ -72,6 +85,7 @@
   justify-content: space-between;
   box-sizing: border-box;
   z-index: 2;
+  font-family: gmarketSansMedium;
 }
 .headerLogo {
   width: 140px;
@@ -127,6 +141,7 @@
   box-sizing: border-box;
   width: 120px;
   font-size: 0.875rem;
+  font-family: gmarketSansMedium;
 }
 #bg1_content2 {
   display: flex;
@@ -137,12 +152,12 @@
 }
 #bg1_content2_text1 {
   font-size: 5.75rem;
-  font-weight: bold;
   line-height: 1.2;
 }
 #bg1_content2_text2 {
   font-size: 1.375rem;
   margin-top: 20px;
+  font-family: gmarketSansMedium;
 }
 #startButton {
   width: 300px;
@@ -158,6 +173,7 @@
   font-weight: normal;
   margin-top: 92px;
   padding-right: 1.2rem;
+  font-family: gmarketSansLight;
 }
 
 #bg1_content3 {
@@ -166,6 +182,7 @@
   text-align: right;
   padding-right: calc(85px + 50px);
   margin-top: 30px;
+  font-family: gmarketSansLight;
 }
 
 /* Main2 */
@@ -176,21 +193,24 @@
   width: 100%;
   flex-direction: column;
   padding: 60px 193px;
+  max-width: 1920px;
+  z-index: 2;
 }
 #main2_text1 {
   font-size: 0.875rem;
   margin-bottom: 70px;
   opacity: 0.25;
   text-align: right;
+  font-family: gmarketSansMedium;
 }
 #main2_text2 {
   font-size: 3.563rem;
-  font-weight: bold;
 }
 #main2_text3 {
   font-size: 1.25rem;
   display: flex;
   align-items: flex-end;
+  font-family: gmarketSansMedium;
 }
 #main2_flow {
   /* background-image: url("../public/img/main2_flow.png");
@@ -234,13 +254,13 @@
   margin-top: 140px;
   flex-direction: column;
   padding: 0 193px;
+  max-width: 1920px;
 }
 #main2_needs_text1 {
   display: flex;
   align-items: center;
   top: 40px;
   font-size: 3.563rem;
-  font-weight: bold;
   text-align: right;
   align-self: flex-end;
 }
@@ -252,6 +272,7 @@
   text-align: left;
   position: relative;
   margin-top: -25px;
+  z-index: 1;
 }
 
 /* client */
@@ -261,12 +282,15 @@
   padding-top: 80px;
   padding-bottom: 200px;
   position: relative;
+  width: 100%;
+  max-width: 1920px;
 }
 #client_background {
   background-image: url("../public/img/main2_needs.png");
   background-repeat: no-repeat;
   background-size: contain;
-  width: 1600px;
+  width: 100%;
+  max-width: 1920px;
   height: 800px;
   display: flex;
   position: absolute;
@@ -281,6 +305,7 @@
   color: rgba(255, 255, 255, 0.5);
   padding-bottom: 12px;
   flex-direction: column;
+  font-family: gmarketSansMedium;
 }
 .clientWrapper {
   display: flex;
@@ -348,26 +373,34 @@
   background-position: right;
   min-height: 1000px;
   padding: 225px 193px;
+  justify-content: center;
 }
 #aiDataImg1 {
   height: 672px;
   width: 100%;
   object-fit: contain;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat;
   background-size: contain;
-  background-position: right;
-  background-image: url("../public/img/main3_ai_bg.png");
+  background-position: right; */
+  /* background-image: url("../public/img/main3_ai_bg.png"); */
   position: absolute;
   right: 0;
   margin-top: 50px;
   z-index: -1;
+}
+#aiDataImg {
+  background-image: url("../public/img/main3_ai_bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  height: 672px;
 }
 #bg_img {
   height: 1080px;
   width: 100%;
   object-fit: contain;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: right;
   background-image: url("../public/img/platform_bg_img.png");
   position: absolute;
@@ -380,6 +413,8 @@
   display: flex;
   flex-direction: column;
   color: #000000;
+  width: 100%;
+  max-width: 1920px;
   min-width: 1040px;
   z-index: 1;
 }
@@ -405,6 +440,7 @@
   font-size: 1.75rem;
   /* margin-bottom: 30px; */
   height: 80px;
+  font-family: gmarketSansMedium;
 }
 .main3_num_value {
   font-size: 3.75rem;
@@ -415,6 +451,7 @@
   display: flex;
   width: 60%;
   margin-top: 50px;
+  font-family: gmarketSansMedium;
 }
 .main3_text2 {
   font-size: 1.25rem;
@@ -426,23 +463,23 @@
 .main4 {
   display: flex;
   width: 100%;
-  /* background-color: white; */
-  background-image: url("../public/img/main4_bg.png");
+  background-color: white;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 0% 100px;
-  min-height: 900px;
-  padding: 0 160px;
-  justify-content: flex-end;
+  min-height: 1000px;
+  justify-content: center;
   color: #000000;
   padding-top: 30px;
   margin-top: 200px;
-  /* z-index: 1; */
 }
 .main4_text_wrapper {
   display: flex;
   flex-direction: column;
   z-index: 1;
+  position: absolute;
+  right: 150px;
+  top: 0;
 }
 .main4_text1 {
   font-size: 3.563rem;
@@ -451,6 +488,7 @@
 .main4_text2 {
   font-size: 1.75rem;
   margin-top: 30px;
+  font-family: gmarketSansMedium;
 }
 
 /* main5 */
@@ -472,6 +510,7 @@
   background-color: #000000;
   padding: 43px 193px;
   color: white;
+  font-family: gmarketSansMedium;
 }
 .footer_text_wrapper {
   display: flex;

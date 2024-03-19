@@ -89,9 +89,6 @@ function App() {
                           The PSD AD file will be varied for the media platform
                           of your choice
                         </div>
-                        <div id="bg1_content2_button1">
-                          Input your Photoshop AD data source
-                        </div>
                         <Button
                           onClick={handleOpen}
                           id="startButton"
@@ -361,7 +358,7 @@ function App() {
         }}
       >
         <div id="main2_needs_text1">
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", zIndex: 2 }}>
             <span>
               Why is this service
               <br />
@@ -395,71 +392,113 @@ function App() {
 
       <div className="clientContainer">
         {/* client 1 */}
-        <div style={{ marginLeft: "240px" }}>
-          <div className="clientWrapper">
-            <img
-              className="clientImg"
-              src="./img/icons/client1_img.png"
-              alt=""
-            />
-            <div id="speechBubble1">
-              It's exhausting to work with variations
-              <br />
-              for different media platform sizes
+        <InView>
+          {({ inView, ref, entry }) => (
+            <div
+              ref={ref}
+              style={{ position: "relative", zIndex: 2, marginLeft: "240px" }}
+            >
+              {inView && (
+                <FadeIn transitionDuration={600}>
+                  <div className="clientWrapper">
+                    <img
+                      className="clientImg"
+                      src="./img/icons/client1_img.png"
+                      alt=""
+                    />
+                    <div id="speechBubble1">
+                      It's exhausting to work with variations
+                      <br />
+                      for different media platform sizes
+                    </div>
+                    <img
+                      className="clientName"
+                      src="./img/icons/client1_name.png"
+                      alt=""
+                      style={{ left: "10px" }}
+                    />
+                  </div>
+                </FadeIn>
+              )}
             </div>
-            <img
-              className="clientName"
-              src="./img/icons/client1_name.png"
-              alt=""
-              style={{ left: "10px" }}
-            />
-          </div>
-        </div>
+          )}
+        </InView>
 
         {/* client 2 */}
-        <div style={{ marginRight: "240px", alignSelf: "flex-end" }}>
-          <div className="clientWrapper">
-            <div id="speechBubble2">
-              I want to have the best campaign
-              <br />
-              performance with low cost and labor
+        <InView>
+          {({ inView, ref, entry }) => (
+            <div
+              ref={ref}
+              style={{
+                position: "relative",
+                zIndex: 2,
+                marginRight: "240px",
+                alignSelf: "flex-end",
+              }}
+            >
+              {inView && (
+                <FadeIn transitionDuration={600} delay={600}>
+                  <div className="clientWrapper">
+                    <div id="speechBubble2">
+                      I want to have the best campaign
+                      <br />
+                      performance with low cost and labor
+                    </div>
+                    <img
+                      className="clientImg"
+                      src="./img/icons/client2_img.png"
+                      alt=""
+                      style={{ marginRight: "0px", height: "188px" }}
+                    />
+                    <img
+                      className="clientName"
+                      src="./img/icons/client2_name.png"
+                      alt=""
+                      style={{ right: "0px" }}
+                    />
+                  </div>
+                </FadeIn>
+              )}
             </div>
-            <img
-              className="clientImg"
-              src="./img/icons/client2_img.png"
-              alt=""
-              style={{ marginRight: "0px", height: "188px" }}
-            />
-            <img
-              className="clientName"
-              src="./img/icons/client2_name.png"
-              alt=""
-              style={{ right: "0px" }}
-            />
-          </div>
-        </div>
+          )}
+        </InView>
 
         {/* client 3 */}
-        <div style={{ marginLeft: "510px" }}>
-          <div className="clientWrapper">
-            <img
-              className="clientImg"
-              src="./img/icons/client3_img.png"
-              alt=""
-            />
-            <div id="speechBubble3">
-              I have AD photoshop data,
-              <br />
-              but I can't utilize it
+        <InView>
+          {({ inView, ref, entry }) => (
+            <div
+              ref={ref}
+              style={{
+                position: "relative",
+                zIndex: 2,
+                marginLeft: "510px",
+              }}
+            >
+              {inView && (
+                <FadeIn transitionDuration={600} delay={1100}>
+                  <div className="clientWrapper">
+                    <img
+                      className="clientImg"
+                      src="./img/icons/client3_img.png"
+                      alt=""
+                    />
+                    <div id="speechBubble3">
+                      I have AD photoshop data,
+                      <br />
+                      but I can't utilize it
+                    </div>
+                    <img
+                      className="clientName"
+                      src="./img/icons/client3_name.png"
+                      alt=""
+                      style={{ left: "-35px" }}
+                    />
+                  </div>
+                </FadeIn>
+              )}
             </div>
-            <img
-              className="clientName"
-              src="./img/icons/client3_name.png"
-              alt=""
-              style={{ left: "-35px" }}
-            />
-          </div>
-        </div>
+          )}
+        </InView>
 
         <div id="client_background">
           <span>Solutions to meet needs & solve inconveniences</span>
@@ -566,29 +605,31 @@ function App() {
             </div>
           </div>
 
-          <div id="aiDataImg1">
-            <div
-              style={{
-                width: "100%",
-                height: "100%",
-                position: "relative",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <img
-                src="./img/icons/ai_text.png"
-                alt=""
-                style={{
-                  width: "129px",
-                  objectFit: "contain",
-                  right: "300px",
-                  position: "absolute",
-                  marginBottom: "50px",
-                }}
-              />
-            </div>
-          </div>
+          <InView>
+            {({ inView, ref, entry }) => (
+              <div id="aiDataImg1" ref={ref}>
+                {inView && (
+                  <FadeIn transitionDuration={600}>
+                    <div id="aiDataImg">
+                      <FadeIn transitionDuration={600} delay={600}>
+                        <img
+                          src="./img/icons/ai_text.png"
+                          alt=""
+                          style={{
+                            width: "129px",
+                            objectFit: "contain",
+                            right: "300px",
+                            position: "absolute",
+                            top: "230px",
+                          }}
+                        />
+                      </FadeIn>
+                    </div>
+                  </FadeIn>
+                )}
+              </div>
+            )}
+          </InView>
         </div>
 
         <div id="bg_img" />
@@ -596,19 +637,79 @@ function App() {
 
       {/* main4 */}
       <div className="main4">
-        <div className="main4_text_wrapper">
-          <div className="main4_text1">
-            Choose
-            <br />
-            the media you
-            <br />
-            want to run ads on!
+        <div
+          style={{
+            display: "flex",
+            position: "relative",
+            width: "100%",
+            maxWidth: "1920px",
+          }}
+        >
+          <div className="main4_text_wrapper">
+            <div className="main4_text1">
+              Choose
+              <br />
+              the media you
+              <br />
+              want to run ads on!
+            </div>
+            <div className="main4_text2">
+              Automatically converts
+              <br />
+              numerous sizes and specific specifications
+            </div>
           </div>
-          <div className="main4_text2">
-            Automatically converts
-            <br />
-            numerous sizes and specific specifications
-          </div>
+          {/* 모니터 이미지 */}
+          <img
+            style={{
+              position: "absolute",
+              left: "58px",
+              bottom: "60px",
+              width: "1080px",
+            }}
+            src={"./img/main4_img1.png"}
+          />
+          {/* 앱 아이콘 이미지 */}
+          <InView>
+            {({ inView, ref, entry }) => (
+              <div ref={ref}>
+                {inView && (
+                  <>
+                    <FadeIn transitionDuration={1000}>
+                      <img
+                        style={{
+                          position: "absolute",
+                          left: "58px",
+                          top: "120px",
+                          width: "970px",
+                        }}
+                        src={"./img/main4_img2.png"}
+                      />
+                    </FadeIn>
+                  </>
+                )}
+              </div>
+            )}
+          </InView>
+          <InView>
+            {({ inView, ref, entry }) => (
+              <div ref={ref}>
+                {inView && (
+                  <FadeIn transitionDuration={1000} delay={800}>
+                    <img
+                      style={{
+                        top: "400px",
+                        width: "631px",
+                        position: "absolute",
+                        left: "1190px",
+                      }}
+                      src="./img/main4_img3.png"
+                    />
+                  </FadeIn>
+                )}
+              </div>
+            )}
+          </InView>
         </div>
       </div>
 
@@ -645,11 +746,18 @@ function App() {
                           fontSize: "4.063rem",
                           fontWeight: "bold",
                           marginTop: "20px",
+                          marginBottom: "9px",
                         }}
                       >
                         Start now!
                       </span>
-                      <span style={{ fontSize: "1.625rem", opacity: 0.6 }}>
+                      <span
+                        style={{
+                          fontSize: "1.625rem",
+                          opacity: 0.6,
+                          fontFamily: "gmarketSansMedium",
+                        }}
+                      >
                         Try it for yourself
                       </span>
                     </div>

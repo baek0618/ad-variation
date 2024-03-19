@@ -13,10 +13,12 @@ const ModalContainer = styled.div`
   border: none;
   border-radius: 15px;
   padding: 57px 59px;
+  font-family: gmarketSansMedium;
 `;
 const Title = styled.div`
   font-size: 1.875rem;
-  font-weight: bold;
+  font-family: gmarketSansBold;
+  margin-bottom: 4px;
 `;
 const SubTitle = styled.div``;
 
@@ -28,6 +30,7 @@ const Contents = styled.div`
 const UploadFiles = styled.div`
   display: flex;
   flex-direction: column;
+  margin-right: 63px;
 `;
 
 const Table = styled.div`
@@ -52,7 +55,6 @@ const Row = styled.div`
   }
   div:nth-child(3) {
     width: 25%;
-    font-weight: bold;
     font-size: 0.875rem;
   }
   div:nth-child(4) {
@@ -116,7 +118,7 @@ const SelectModal = ({ open, handleClose }) => {
         <Contents>
           <UploadFiles>
             <img
-              style={{ width: "227px" }}
+              style={{ width: "180px" }}
               src="/img/icons/Data_11@2x.png"
               alt=""
             />
@@ -125,6 +127,7 @@ const SelectModal = ({ open, handleClose }) => {
                 fontSize: "0.938rem",
                 fontWeight: "bold",
                 marginTop: "12px",
+                fontFamily: "gmarketSansBold",
               }}
             >
               Upload file
@@ -151,6 +154,7 @@ const SelectModal = ({ open, handleClose }) => {
                 fontSize: "0.938rem",
                 fontWeight: "bold",
                 marginTop: "38px",
+                fontFamily: "gmarketSansBold",
               }}
             >
               File Name
@@ -176,7 +180,13 @@ const SelectModal = ({ open, handleClose }) => {
                 <div>
                   <Layout style={{ width: "59px", height: "59px" }} />
                 </div>
-                <div>1200 x 1200</div>
+                <div
+                  style={{
+                    fontFamily: "gmarketSansBold",
+                  }}
+                >
+                  1200 x 1200
+                </div>
                 <div>
                   <span>1:1 / 1.2:1 / 1:1.2 Ratio</span>
                   <span>Adison, Facebook, Naver Webtoon ···</span>
@@ -192,7 +202,13 @@ const SelectModal = ({ open, handleClose }) => {
                 <div>
                   <Layout style={{ width: "59px", height: "32px" }} />
                 </div>
-                <div>1200 x 600</div>
+                <div
+                  style={{
+                    fontFamily: "gmarketSansBold",
+                  }}
+                >
+                  1200 x 600
+                </div>
                 <div>
                   <span>2:1 / 16:9 / 1.91:1 Ratio</span>
                   <span>Youtube, Naver, Kakao, Toss ···</span>
@@ -208,7 +224,13 @@ const SelectModal = ({ open, handleClose }) => {
                 <div>
                   <Layout style={{ width: "32px", height: "59px" }} />
                 </div>
-                <div>600 x 1200</div>
+                <div
+                  style={{
+                    fontFamily: "gmarketSansBold",
+                  }}
+                >
+                  600 x 1200
+                </div>
                 <div>
                   <span>1:2 / 9:16 / 1:3.75 Ratio</span>
                   <span>Cashslide, Snow, Instagram ···</span>
@@ -224,7 +246,13 @@ const SelectModal = ({ open, handleClose }) => {
                 <div>
                   <Layout style={{ width: "97px", height: "17px" }} />
                 </div>
-                <div>640 x 100</div>
+                <div
+                  style={{
+                    fontFamily: "gmarketSansBold",
+                  }}
+                >
+                  640 x 100
+                </div>
                 <div>
                   <span>6.4:1 / 8.09:1 / 3.2:1 Ratio</span>
                   <span>Google, Amazon, InMobi, Cauly ···</span>
