@@ -116,6 +116,7 @@
   height: 100vh;
   min-height: 100vh;
   max-height: 1080px;
+  position: relative;
 }
 .mainVideoContainer {
   position: absolute;
@@ -374,6 +375,7 @@
   min-height: 1000px;
   padding: 225px 193px;
   justify-content: center;
+  position: relative;
 }
 #aiDataImg1 {
   height: 672px;

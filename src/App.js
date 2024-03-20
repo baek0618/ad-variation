@@ -543,7 +543,9 @@ function App() {
                         }}
                         ref={countUpRef}
                       />
-                      <div style={{ marginBottom: "10px" }}>S</div>
+                      <div style={{ marginBottom: "10px", marginLeft: "6px" }}>
+                        S
+                      </div>
                     </div>
                   )}
                 </CountUp>
@@ -564,7 +566,9 @@ function App() {
                         }}
                         ref={countUpRef}
                       />
-                      <div style={{ marginBottom: "10px" }}>%</div>
+                      <div style={{ marginBottom: "10px", marginLeft: "6px" }}>
+                        %
+                      </div>
                     </div>
                   )}
                 </CountUp>
@@ -585,7 +589,9 @@ function App() {
                         }}
                         ref={countUpRef}
                       />
-                      <div style={{ marginBottom: "10px" }}>%</div>
+                      <div style={{ marginBottom: "10px", marginLeft: "6px" }}>
+                        %
+                      </div>
                     </div>
                   )}
                 </CountUp>
@@ -666,22 +672,30 @@ function App() {
               left: "58px",
               bottom: "60px",
               width: "1080px",
+              maxWidth: "58%",
             }}
             src={"./img/main4_img1.png"}
           />
           {/* 앱 아이콘 이미지 */}
           <InView>
             {({ inView, ref, entry }) => (
-              <div ref={ref}>
+              <div
+                ref={ref}
+                style={{
+                  width: "970px",
+                  maxWidth: "55%",
+                  position: "absolute",
+                  left: "58px",
+                  top: "120px",
+                }}
+              >
                 {inView && (
                   <>
                     <FadeIn transitionDuration={1000}>
                       <img
                         style={{
-                          position: "absolute",
-                          left: "58px",
-                          top: "120px",
-                          width: "970px",
+                          width: "100%",
+                          objectFit: "contain",
                         }}
                         src={"./img/main4_img2.png"}
                       />
@@ -693,15 +707,22 @@ function App() {
           </InView>
           <InView>
             {({ inView, ref, entry }) => (
-              <div ref={ref}>
+              <div
+                ref={ref}
+                style={{
+                  top: "400px",
+                  width: "631px",
+                  maxWidth: "40%",
+                  position: "absolute",
+                  right: "92px",
+                }}
+              >
                 {inView && (
                   <FadeIn transitionDuration={1000} delay={800}>
                     <img
                       style={{
-                        top: "400px",
-                        width: "631px",
-                        position: "absolute",
-                        left: "1190px",
+                        width: "100%",
+                        objectFit: "contain",
                       }}
                       src="./img/main4_img3.png"
                     />
