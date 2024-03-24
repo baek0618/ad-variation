@@ -120,7 +120,7 @@ const SelectModal = ({ open, handleClose }) => {
           <UploadFiles>
             <img
               style={{ width: "180px" }}
-              src="/img/icons/Data_11@2x.png"
+              src="./img/icons/Data_11@2x.png"
               alt=""
             />
             <div
