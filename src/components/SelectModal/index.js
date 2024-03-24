@@ -107,6 +107,7 @@ const SelectModal = ({ open, handleClose }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        backgroundColor: "rgba(0, 0, 0, 0.8)",
       }}
     >
       <ModalContainer>
@@ -137,9 +138,9 @@ const SelectModal = ({ open, handleClose }) => {
                 padding: "6px 14px",
                 borderRadius: "16px",
                 border: "1px solid #D5D5D5",
-                marginTop: "6px",
+                marginTop: "8px",
                 display: "flex",
-                fontSize: "0.875rem",
+                fontSize: "0.688rem",
                 fontWeight: "bold",
                 justifyContent: "center",
                 alignItems: "center",
@@ -157,7 +158,7 @@ const SelectModal = ({ open, handleClose }) => {
                 fontFamily: "gmarketSansBold",
               }}
             >
-              File Name
+              File name
             </div>
           </UploadFiles>
           <TableView>
@@ -168,13 +169,14 @@ const SelectModal = ({ open, handleClose }) => {
                 </div>
                 <div style={{ display: "flex" }}>Layout</div>
                 <div style={{ fontWeight: "normal" }}>Size</div>
-                <div>Media Platform</div>
+                <div>Media platform</div>
               </Row>
               <Row>
                 <div>
                   <Checkbox
                     checked={variantSize === 0}
                     onChange={() => setVariantSize(0)}
+                    sx={{ color: "#D5D5D5" }}
                   />
                 </div>
                 <div>
@@ -197,6 +199,7 @@ const SelectModal = ({ open, handleClose }) => {
                   <Checkbox
                     checked={variantSize === 1}
                     onChange={() => setVariantSize(1)}
+                    sx={{ color: "#D5D5D5" }}
                   />
                 </div>
                 <div>
@@ -219,6 +222,7 @@ const SelectModal = ({ open, handleClose }) => {
                   <Checkbox
                     checked={variantSize === 2}
                     onChange={() => setVariantSize(2)}
+                    sx={{ color: "#D5D5D5" }}
                   />
                 </div>
                 <div>
@@ -241,6 +245,7 @@ const SelectModal = ({ open, handleClose }) => {
                   <Checkbox
                     checked={variantSize === 3}
                     onChange={() => setVariantSize(3)}
+                    sx={{ color: "#D5D5D5" }}
                   />
                 </div>
                 <div>
@@ -270,6 +275,8 @@ const SelectModal = ({ open, handleClose }) => {
                   border: "1px solid #E7E7E7",
                   padding: "6px 18px",
                   textTransform: "none",
+                  fontFamily: "gmarketSansBold",
+                  width: "143px",
                 }}
               >
                 Cancel
@@ -283,6 +290,8 @@ const SelectModal = ({ open, handleClose }) => {
                   borderRadius: "8px",
                   padding: "6px 18px",
                   textTransform: "none",
+                  fontFamily: "gmarketSansBold",
+                  width: "143px",
                 }}
               >
                 Variations

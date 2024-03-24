@@ -32,11 +32,20 @@ function App() {
             alt="logo"
           />
           <div>MENU</div>
-          <div>
-            <Button variant="text" sx={{ color: "white" }}>
+          <div style={{ display: "flex" }}>
+            <Button variant="text" sx={{ color: "white", fontSize: "1rem" }}>
               MY PAGE
             </Button>
-            <Button variant="text" id="langButton">
+            <Button
+              variant="text"
+              id="langButton"
+              style={{
+                fontFamily: "gmarketSansMedium",
+                fontWeight: "bold",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
               <div
                 style={{
                   width: "12px",
@@ -536,14 +545,19 @@ function App() {
                     <div style={{ display: "flex", alignItems: "flex-end" }}>
                       <span
                         style={{
-                          fontSize: "100px",
+                          fontSize: "8rem",
                           display: "flex",
                           alignItems: "flex-end",
-                          width: "130px",
                         }}
                         ref={countUpRef}
                       />
-                      <div style={{ marginBottom: "10px", marginLeft: "6px" }}>
+                      <div
+                        style={{
+                          marginBottom: "10px",
+                          marginLeft: "6px",
+                          fontSize: "5rem",
+                        }}
+                      >
                         S
                       </div>
                     </div>
@@ -559,14 +573,19 @@ function App() {
                     <div style={{ display: "flex", alignItems: "flex-end" }}>
                       <span
                         style={{
-                          fontSize: "6.25rem",
+                          fontSize: "8rem",
                           display: "flex",
                           alignItems: "flex-end",
-                          width: "130px",
                         }}
                         ref={countUpRef}
                       />
-                      <div style={{ marginBottom: "10px", marginLeft: "6px" }}>
+                      <div
+                        style={{
+                          marginBottom: "10px",
+                          fontSize: "5rem",
+                          marginLeft: "6px",
+                        }}
+                      >
                         %
                       </div>
                     </div>
@@ -582,14 +601,19 @@ function App() {
                     <div style={{ display: "flex", alignItems: "flex-end" }}>
                       <span
                         style={{
-                          fontSize: "6.25rem",
+                          fontSize: "8rem",
                           display: "flex",
                           alignItems: "flex-end",
-                          width: "130px",
                         }}
                         ref={countUpRef}
                       />
-                      <div style={{ marginBottom: "10px", marginLeft: "6px" }}>
+                      <div
+                        style={{
+                          marginBottom: "10px",
+                          fontSize: "5rem",
+                          marginLeft: "6px",
+                        }}
+                      >
                         %
                       </div>
                     </div>
@@ -759,7 +783,7 @@ function App() {
                     >
                       <img
                         src="./img/icons/psd.png"
-                        style={{ width: "280px" }}
+                        style={{ width: "314px" }}
                         alt=""
                       />
                       <span
@@ -768,6 +792,7 @@ function App() {
                           fontWeight: "bold",
                           marginTop: "20px",
                           marginBottom: "9px",
+                          fontFamily: "gmarketSansBold",
                         }}
                       >
                         Start now!
@@ -803,7 +828,7 @@ function App() {
           <div className="footer_text2">
             <img
               src="./img/icons/adone_WH@2x.png"
-              style={{ width: "120px" }}
+              style={{ width: "120px", marginBottom: "7px" }}
               alt=""
             />
             <span>Copyright ⓒ AD.one Corporation All rights reserved.</span>
