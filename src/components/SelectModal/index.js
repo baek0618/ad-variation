@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Modal from "@mui/material/Modal";
 import styled from "@emotion/styled";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const ModalContainer = styled.div`
   display: flex;
@@ -90,6 +92,17 @@ const TableView = styled.div`
 
 const SelectModal = ({ open, handleClose }) => {
   const [variantSize, setVariantSize] = useState();
+  const [targetFile, setTargetFile] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  const inputFile = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      setVariantSize();
+      setTargetFile();
+      setIsLoading(false);
+    };
+  }, []);
 
   useEffect(() => {
     if (!open) {
@@ -97,10 +110,71 @@ const SelectModal = ({ open, handleClose }) => {
     }
   }, [open]);
 
+  const handleFile = (e) => {
+    setTargetFile(e.target.files[0]);
+  };
+
+  const handleVariantSize = (newVariantSize) => {
+    setVariantSize(newVariantSize);
+    if (!targetFile) {
+      inputFile.current.click();
+    }
+  };
+
+  const handleCancel = () => {
+    setVariantSize();
+    setTargetFile();
+  };
+
+  const handleSubmit = () => {
+    setIsLoading(true);
+    const api_url = "https://adwin-418207.du.r.appspot.com/infer";
+    const size = variantSize.toString();
+    var data = new FormData();
+    data.append("psd_file", targetFile);
+    data.append("idx", size);
+
+    fetch(api_url, {
+      method: "POST",
+      body: data,
+    })
+      .then((response) => {
+        return response.text();
+      })
+      .then((response) => {
+        const jsonData = JSON.parse(response);
+        if (jsonData.image) {
+          const ImageBase64 = jsonData.image;
+
+          var a = document.createElement("a"); //Create <a>
+          a.href = "data:image/png;base64," + ImageBase64; //Image Base64 Goes here
+          a.download = "Image.png"; //File name Here
+          a.click(); //Downloaded file
+          handleModalClose();
+        } else {
+          alert("Please check the input data.");
+        }
+      })
+      .catch((error) => {
+        console.error(error); // this line can also throw, e.g. when console = {}
+        alert("Please check the input data.");
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
+
+  const handleModalClose = () => {
+    setVariantSize();
+    setTargetFile();
+    setIsLoading(false);
+    handleClose();
+  };
+
   return (
     <Modal
       open={open}
-      onClose={handleClose}
+      onClose={handleModalClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
       sx={{
@@ -127,7 +201,7 @@ const SelectModal = ({ open, handleClose }) => {
               style={{
                 fontSize: "0.938rem",
                 fontWeight: "bold",
-                marginTop: "12px",
+                marginTop: "34px",
                 fontFamily: "gmarketSansBold",
               }}
             >
@@ -160,6 +234,32 @@ const SelectModal = ({ open, handleClose }) => {
             >
               File name
             </div>
+            {targetFile?.name && (
+              <div
+                style={{
+                  fontSize: "12px",
+                  marginTop: "6px",
+                  display: "flex",
+                  alignItems: "center",
+                  fontFamily: "gmarketSansMedium",
+                }}
+              >
+                <Button
+                  variant="text"
+                  sx={{
+                    p: 0,
+                    minWidth: "20px",
+                    minHeight: "0px",
+                    mr: "6px",
+                    color: "#C4C4C4",
+                  }}
+                  onClick={handleCancel}
+                >
+                  x
+                </Button>
+                {targetFile?.name}
+              </div>
+            )}
           </UploadFiles>
           <TableView>
             <Table>
@@ -174,8 +274,8 @@ const SelectModal = ({ open, handleClose }) => {
               <Row>
                 <div>
                   <Checkbox
-                    checked={variantSize === 0}
-                    onChange={() => setVariantSize(0)}
+                    checked={variantSize === 1}
+                    onChange={() => handleVariantSize(1)}
                     sx={{ color: "#D5D5D5" }}
                   />
                 </div>
@@ -197,8 +297,8 @@ const SelectModal = ({ open, handleClose }) => {
               <Row>
                 <div>
                   <Checkbox
-                    checked={variantSize === 1}
-                    onChange={() => setVariantSize(1)}
+                    checked={variantSize === 3}
+                    onChange={() => handleVariantSize(3)}
                     sx={{ color: "#D5D5D5" }}
                   />
                 </div>
@@ -221,7 +321,7 @@ const SelectModal = ({ open, handleClose }) => {
                 <div>
                   <Checkbox
                     checked={variantSize === 2}
-                    onChange={() => setVariantSize(2)}
+                    onChange={() => handleVariantSize(2)}
                     sx={{ color: "#D5D5D5" }}
                   />
                 </div>
@@ -243,8 +343,8 @@ const SelectModal = ({ open, handleClose }) => {
               <Row>
                 <div>
                   <Checkbox
-                    checked={variantSize === 3}
-                    onChange={() => setVariantSize(3)}
+                    checked={variantSize === 4}
+                    onChange={() => handleVariantSize(4)}
                     sx={{ color: "#D5D5D5" }}
                   />
                 </div>
@@ -256,7 +356,7 @@ const SelectModal = ({ open, handleClose }) => {
                     fontFamily: "gmarketSansBold",
                   }}
                 >
-                  640 x 100
+                  1280 x 200
                 </div>
                 <div>
                   <span>6.4:1 / 8.09:1 / 3.2:1 Ratio</span>
@@ -266,7 +366,7 @@ const SelectModal = ({ open, handleClose }) => {
             </Table>
             <ButtonWrapper>
               <Button
-                onClick={handleClose}
+                onClick={handleModalClose}
                 sx={{
                   ml: "18px",
                   background: "#F5F5F5",
@@ -293,12 +393,30 @@ const SelectModal = ({ open, handleClose }) => {
                   fontFamily: "gmarketSansBold",
                   width: "143px",
                 }}
+                onClick={handleSubmit}
+                disabled={!targetFile}
               >
                 Variations
               </Button>
             </ButtonWrapper>
           </TableView>
         </Contents>
+
+        <input
+          type="file"
+          ref={inputFile}
+          style={{ display: "none" }}
+          onChange={handleFile}
+        />
+
+        {isLoading && (
+          <Backdrop
+            sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+            open={isLoading}
+          >
+            <CircularProgress color="inherit" />
+          </Backdrop>
+        )}
       </ModalContainer>
     </Modal>
   );
