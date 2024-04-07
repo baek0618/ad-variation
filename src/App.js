@@ -102,9 +102,20 @@ function App() {
                           onClick={handleOpen}
                           id="startButton"
                           variant="text"
+                          sx={{
+                            lineHeight: 0,
+                          }}
                         >
-                          <span>Start</span>
-                          <span style={{ fontSize: "2.8rem" }}>＋</span>
+                          <p style={{ paddingTop: "4px" }}>Start</p>
+                          <p
+                            style={{
+                              fontSize: "2.8rem",
+                              lineHeight: 0,
+                              paddingTop: "6px",
+                            }}
+                          >
+                            ＋
+                          </p>
                         </Button>
                       </FadeIn>
                     )}
@@ -137,9 +148,9 @@ function App() {
         >
           <div id="main2_text2">
             <div>
-              What is DA* automatic
+              <span>What is DA* automatic</span>
               <br />
-              variation service?
+              <span>variation service?</span>
             </div>
           </div>
           <div id="main2_text3">

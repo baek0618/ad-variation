@@ -56,11 +56,12 @@ const Row = styled.div`
     width: 25%;
   }
   div:nth-child(3) {
-    width: 25%;
+    width: 28%;
     font-size: 0.875rem;
+    padding-left: 30px;
   }
   div:nth-child(4) {
-    width: 40%;
+    width: 37%;
     display: flex;
     flex-direction: column;
     span:nth-child(1) {
@@ -116,6 +117,9 @@ const SelectModal = ({ open, handleClose }) => {
 
   const handleVariantSize = (newVariantSize) => {
     setVariantSize(newVariantSize);
+  };
+
+  const handleSelectFile = () => {
     if (!targetFile) {
       inputFile.current.click();
     }
@@ -196,6 +200,7 @@ const SelectModal = ({ open, handleClose }) => {
               style={{ width: "180px" }}
               src="./img/icons/Data_11@2x.png"
               alt=""
+              onClick={handleSelectFile}
             />
             <div
               style={{
@@ -207,22 +212,35 @@ const SelectModal = ({ open, handleClose }) => {
             >
               Upload file
             </div>
-            <div
-              style={{
-                padding: "6px 14px",
-                borderRadius: "16px",
-                border: "1px solid #D5D5D5",
-                marginTop: "8px",
-                display: "flex",
-                fontSize: "0.688rem",
-                fontWeight: "bold",
-                justifyContent: "center",
-                alignItems: "center",
+            <Button
+              variant="text"
+              sx={{
+                p: 0,
+                minWidth: 0,
                 width: "fit-content",
+                minHeight: 0,
+                marginTop: "8px",
+                color: "#000000",
               }}
+              onClick={handleSelectFile}
             >
-              MY PC
-            </div>
+              <div
+                style={{
+                  padding: "6px 14px",
+                  borderRadius: "16px",
+                  border: "1px solid #D5D5D5",
+
+                  display: "flex",
+                  fontSize: "0.688rem",
+                  fontWeight: "bold",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "fit-content",
+                }}
+              >
+                MY PC
+              </div>
+            </Button>
 
             <div
               style={{
