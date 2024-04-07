@@ -196,12 +196,23 @@ const SelectModal = ({ open, handleClose }) => {
         </SubTitle>
         <Contents>
           <UploadFiles>
-            <img
-              style={{ width: "180px" }}
-              src="./img/icons/Data_11@2x.png"
-              alt=""
-              onClick={handleSelectFile}
-            />
+            <Button
+              variant="text"
+              sx={{
+                minWidth: 0,
+                width: "180px",
+                minHeight: 0,
+                p: 0,
+              }}
+            >
+              <img
+                style={{ width: "180px" }}
+                src="./img/icons/Data_11@2x.png"
+                alt=""
+                onClick={handleSelectFile}
+              />
+            </Button>
+
             <div
               style={{
                 fontSize: "0.938rem",
@@ -395,9 +406,10 @@ const SelectModal = ({ open, handleClose }) => {
                   textTransform: "none",
                   fontFamily: "gmarketSansBold",
                   width: "143px",
+                  height: "38px",
                 }}
               >
-                Cancel
+                <span style={{ lineHeight: "0" }}>Cancel</span>
               </Button>
               <Button
                 variant="contained"
@@ -410,11 +422,12 @@ const SelectModal = ({ open, handleClose }) => {
                   textTransform: "none",
                   fontFamily: "gmarketSansBold",
                   width: "143px",
+                  height: "38px",
                 }}
                 onClick={handleSubmit}
-                disabled={!targetFile}
+                disabled={!targetFile || !variantSize}
               >
-                Variations
+                <span style={{ lineHeight: "0" }}>Variations</span>
               </Button>
             </ButtonWrapper>
           </TableView>
